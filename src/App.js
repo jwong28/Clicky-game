@@ -26,6 +26,7 @@ class App extends Component {
     }
   }
 
+  //Shuffles the array 
   shuffle() {
     let arr = this.state.nums;
     for (let i=arr .length-1 ; i > 0; i--) {
@@ -37,6 +38,7 @@ class App extends Component {
     this.setState({nums: arr});
   }
   
+  //If click, check
   handleClick(item) {
     this.shuffle();
     if(this.results.includes(item)){
@@ -44,6 +46,7 @@ class App extends Component {
         data: "You guessed incorrectly!", 
         score: 0
       });
+      this.results.length = 0;
     }
     else{
       let newScore = this.state.score+1;
